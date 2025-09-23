@@ -65,3 +65,21 @@ body {
   outline-offset: 2px;
   border-radius: 4px;
 }
+
+/* Animated gradient backgrounds */
+.bg-size-200 {
+  background-size: 200% 200%;
+}
+
+.animate-gradient {
+  animation: gradient 6s ease infinite;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

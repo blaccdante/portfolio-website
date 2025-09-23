@@ -91,11 +91,13 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-              Software Engineer
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white block sm:inline">
-                <span className="hidden sm:inline">{" "}| </span>
-                <span className="sm:hidden">& </span>
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-size-200 animate-gradient">
+                Software Engineer
+              </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-500 to-green-500 block sm:inline bg-size-200 animate-gradient">
+                <span className="hidden sm:inline text-white">{" "}| </span>
+                <span className="sm:hidden text-white">& </span>
                 Animator
               </span>
             </h1>
