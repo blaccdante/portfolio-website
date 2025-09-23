@@ -14,7 +14,7 @@ export default function Home() {
   const navigationItems = ['About', 'Skills', 'Projects', 'Contact'];
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-blue-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
         <div className="container mx-auto px-4 sm:px-6 py-4">
@@ -93,7 +93,7 @@ export default function Home() {
           >
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               Software Engineer
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500 block sm:inline">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white block sm:inline">
                 <span className="hidden sm:inline">{" "}| </span>
                 <span className="sm:hidden">& </span>
                 Animator
@@ -119,7 +119,7 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
                 href="/assets/BlaccCv.pdf"
                 target="_blank"
-                className="flex items-center justify-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full px-6 py-3 text-white hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg hover:shadow-purple-500/25 min-h-[48px] touch-manipulation"
+                className="flex items-center justify-center space-x-2 bg-white text-black hover:bg-gray-100 rounded-full px-6 py-3 transition-all shadow-lg hover:shadow-white/25 min-h-[48px] touch-manipulation font-medium"
               >
                 <Download size={20} />
                 <span className="font-medium">Resume</span>
@@ -139,7 +139,7 @@ export default function Home() {
             className="text-center mb-12 sm:mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">About Me</h2>
-            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-6 sm:mb-8"></div>
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-gray-400 to-white mx-auto mb-6 sm:mb-8"></div>
           </motion.div>
           
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -163,19 +163,19 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex justify-center lg:justify-start space-x-4 sm:space-x-6 mt-6 sm:mt-8">
-                <a href="mailto:dannysoawesome@gmail.com" className="text-purple-400 hover:text-purple-300 transition-colors p-2 hover:bg-white/10 rounded-lg touch-manipulation" aria-label="Email">
+                <a href="mailto:dannysoawesome@gmail.com" className="text-gray-300 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg touch-manipulation" aria-label="Email">
                   <Mail size={24} />
                 </a>
-                <a href="http://linkedin.com/in/oreofe-oladepo-623595233" target="_blank" className="text-purple-400 hover:text-purple-300 transition-colors p-2 hover:bg-white/10 rounded-lg touch-manipulation" aria-label="LinkedIn">
+                <a href="http://linkedin.com/in/oreofe-oladepo-623595233" target="_blank" className="text-gray-300 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg touch-manipulation" aria-label="LinkedIn">
                   <Linkedin size={24} />
                 </a>
-                <a href="https://github.com/blaccdante" target="_blank" className="text-purple-400 hover:text-purple-300 transition-colors p-2 hover:bg-white/10 rounded-lg touch-manipulation" aria-label="GitHub">
+                <a href="https://github.com/blaccdante" target="_blank" className="text-gray-300 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg touch-manipulation" aria-label="GitHub">
                   <Github size={24} />
                 </a>
-                <a href="https://www.behance.net/50b26f29" target="_blank" className="text-purple-400 hover:text-purple-300 transition-colors p-2 hover:bg-white/10 rounded-lg touch-manipulation" aria-label="Behance">
+                <a href="https://www.behance.net/50b26f29" target="_blank" className="text-gray-300 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg touch-manipulation" aria-label="Behance">
                   <Palette size={24} />
                 </a>
-                <a href="https://linktr.ee/blaccinferno" target="_blank" className="text-purple-400 hover:text-purple-300 transition-colors p-2 hover:bg-white/10 rounded-lg touch-manipulation" aria-label="Linktree">
+                <a href="https://linktr.ee/blaccinferno" target="_blank" className="text-gray-300 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg touch-manipulation" aria-label="Linktree">
                   <ExternalLink size={24} />
                 </a>
               </div>
@@ -208,7 +208,7 @@ export default function Home() {
             className="text-center mb-12 sm:mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Projects</h2>
-            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-6 sm:mb-8"></div>
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-gray-400 to-white mx-auto mb-6 sm:mb-8"></div>
             <p className="text-white/80 text-base sm:text-lg max-w-2xl mx-auto px-2">
               Here are some of my recent projects showcasing my skills and creativity
             </p>
@@ -228,7 +228,7 @@ export default function Home() {
             className="text-center mb-12 sm:mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Get In Touch</h2>
-            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-6 sm:mb-8"></div>
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-gray-400 to-white mx-auto mb-6 sm:mb-8"></div>
             <p className="text-white/80 text-base sm:text-lg max-w-2xl mx-auto px-2">
               I&apos;m always interested in new opportunities and interesting projects. Let&apos;s connect!
             </p>

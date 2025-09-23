@@ -15,12 +15,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(147, 51, 234, 0.5);
+  background: rgba(156, 163, 175, 0.5);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(147, 51, 234, 0.7);
+  background: rgba(156, 163, 175, 0.7);
 }
 
 body {
@@ -61,7 +61,7 @@ body {
 
 /* Better focus states for accessibility */
 *:focus-visible {
-  outline: 2px solid rgba(147, 51, 234, 0.5);
+  outline: 2px solid rgba(156, 163, 175, 0.5);
   outline-offset: 2px;
   border-radius: 4px;
 }

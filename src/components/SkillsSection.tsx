@@ -33,7 +33,7 @@ export function SkillsSection() {
         className="text-center mb-12 sm:mb-16"
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Skills & Technologies</h2>
-        <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-6 sm:mb-8"></div>
+        <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-gray-400 to-white mx-auto mb-6 sm:mb-8"></div>
         <p className="text-white/80 text-base sm:text-lg max-w-2xl mx-auto px-2">
           Technologies and tools I work with, with proficiency levels
         </p>
@@ -46,7 +46,7 @@ export function SkillsSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: getStaggerDelay(categoryIndex), duration: 0.6 }}
-            className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 sm:p-6 hover:bg-white/10 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10"
+            className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 sm:p-6 hover:bg-white/10 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-white/10"
           >
             <h3 className="text-white font-semibold mb-3 sm:mb-4 text-base sm:text-lg text-center sm:text-left">
               {categoryDisplayNames[category] || category}
@@ -70,7 +70,7 @@ export function SkillsSection() {
                         key={level}
                         className={`w-2 h-2 rounded-full transition-all duration-300 ${
                           level <= skill.proficiency
-                            ? 'bg-gradient-to-r from-purple-400 to-pink-600 shadow-sm'
+                            ? 'bg-gradient-to-r from-gray-400 to-white shadow-sm'
                             : 'bg-white/20'
                         }`}
                       />
