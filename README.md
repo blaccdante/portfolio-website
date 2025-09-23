@@ -1,13 +1,18 @@
 # Portfolio Website
 
-A modern, responsive portfolio website built with React, TypeScript, and Vite.
+A modern, responsive portfolio website showcasing software engineering projects, Web3 work, and creative technologies. Built with Next.js, TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
 
-- Modern React with TypeScript
-- Fast development with Vite
-- Responsive design
-- Clean and professional UI
+- **Next.js 14+** with App Router
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **Responsive Design** - works on all devices
+- **GitHub API Integration** - dynamically fetch repositories
+- **Contact Form** - get in touch easily
+- **Media Gallery** - showcase projects and work
+- **Skills Section** - highlight technical expertise
+- **CV/Resume Download** - downloadable portfolio assets
 
 ## 📸 Screenshots
 
@@ -25,74 +30,101 @@ A modern, responsive portfolio website built with React, TypeScript, and Vite.
 
 ## 🛠️ Built With
 
-- **Frontend**: React + TypeScript + Vite
-- **Backend**: Node.js + Express
-- **Styling**: Modern CSS/Tailwind CSS
+- **[Next.js 14+](https://nextjs.org/)** - React framework with App Router
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[React](https://reactjs.org/)** - UI library
+- **GitHub API** - Dynamic repository fetching
 
 ## 🏃‍♂️ Getting Started
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
-- npm or yarn
+- Node.js 18.17 or later
+- npm, yarn, pnpm, or bun
 
 ### Installation
 
 1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd portfolio-app
+git clone https://github.com/blaccdante/portfolio-website.git
+cd portfolio-website
 ```
 
-2. Install frontend dependencies
+2. Install dependencies
 ```bash
-cd frontend
 npm install
-```
-
-3. Install backend dependencies
-```bash
-cd ../backend
-npm install
+# or
+yarn install
+# or
+pnpm install
 ```
 
 ### Development
 
-1. Start the backend server
+Run the development server:
+
 ```bash
-cd backend
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-2. Start the frontend development server
-```bash
-cd frontend
-npm run dev
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-3. Open [http://localhost:5173](http://localhost:5173) to view it in the browser
+You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
 ## 📂 Project Structure
 
 ```
-portfolio-app/
-├── frontend/          # React frontend
-│   ├── public/
-│   │   └── screenshots/  # Portfolio screenshots
-│   ├── src/
-│   └── package.json
-├── backend/           # Express backend
-│   ├── src/
-│   └── package.json
+portfolio-website/
+├── public/                 # Static assets
+│   ├── assets/            # Images, videos, CV
+│   └── *.svg              # SVG icons
+├── screenshots/           # Portfolio screenshots for README
+├── src/
+│   ├── app/              # Next.js App Router
+│   │   ├── api/          # API routes
+│   │   ├── globals.css   # Global styles
+│   │   ├── layout.tsx    # Root layout
+│   │   └── page.tsx      # Home page
+│   ├── components/       # React components
+│   │   ├── ContactForm.tsx
+│   │   ├── GitHubRepos.tsx
+│   │   ├── MediaGallery.tsx
+│   │   └── SkillsSection.tsx
+│   ├── data/            # Static data
+│   ├── types/           # TypeScript types
+│   └── utils/           # Utility functions
+├── backend/             # Express backend (legacy)
+├── frontend/            # Vite frontend (legacy)
 └── README.md
 ```
 
 ## 🚀 Deployment
 
-The application can be deployed to various platforms:
+The easiest way to deploy this Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- **Frontend**: Vercel, Netlify, or any static hosting service
-- **Backend**: Heroku, Railway, or any Node.js hosting service
+Alternatively, you can deploy to:
+- **Vercel** (Recommended)
+- **Netlify**
+- **Railway**
+- **Any Node.js hosting service**
+
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## ✨ Features Overview
+
+- **Dynamic GitHub Integration**: Automatically fetches and displays your latest repositories
+- **Interactive Media Gallery**: Showcases projects with images and videos
+- **Skills Visualization**: Clean display of technical skills and expertise
+- **Contact Form**: Easy way for visitors to get in touch
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **CV Download**: Direct access to downloadable resume/portfolio
 
 ## 📝 License
 
@@ -101,3 +133,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📧 Contact
 
 Feel free to reach out if you have any questions or suggestions!
+
+---
+
+**Built with ❤️ using Next.js, TypeScript, and Tailwind CSS**
