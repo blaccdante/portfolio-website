@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Github, Mail, Linkedin, Download, Palette, ExternalLink } from "lucide-react";
-import Link from "next/link";
 import { GitHubRepos } from "@/components/GitHubRepos";
 import { MediaGallery } from "@/components/MediaGallery";
 import { SkillsSection } from "@/components/SkillsSection";
@@ -110,8 +109,8 @@ Oreofe Daniel Oladepo (BlaccDante)
                 RESTful/GraphQL APIs, database optimization, and ensuring high-performance, scalable solutions.
               </p>
               <p className="text-white/80 text-lg leading-relaxed mb-6">
-                With a Bachelor's degree in Computer Science from Babcock University, I combine strong engineering fundamentals 
-                with creative skills in animation and Web3 technologies. I've successfully built DeFi platforms, NFT marketplaces, 
+                With a Bachelor&apos;s degree in Computer Science from Babcock University, I combine strong engineering fundamentals 
+                with creative skills in animation and Web3 technologies. I&apos;ve successfully built DeFi platforms, NFT marketplaces, 
                 and bridge aggregators while maintaining a passion for digital art and creative expression.
               </p>
               <div className="flex space-x-4">
@@ -181,7 +180,7 @@ Oreofe Daniel Oladepo (BlaccDante)
             <h2 className="text-4xl font-bold text-white mb-4">Get In Touch</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-8"></div>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              I'm always interested in new opportunities and interesting projects. Let's connect!
+              I&apos;m always interested in new opportunities and interesting projects. Let&apos;s connect!
             </p>
           </motion.div>
           

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { skills } from "@/data/portfolio";
-import { getSkillColor, getStaggerDelay } from "@/utils";
+import { getStaggerDelay } from "@/utils";
 import type { Skill } from "@/types/portfolio";
 
 export function SkillsSection() {

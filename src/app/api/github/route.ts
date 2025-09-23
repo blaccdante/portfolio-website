@@ -18,9 +18,22 @@ export async function GET() {
 
     const repos = await res.json();
 
-    const simplified = repos
-      .filter((r: any) => !r.fork)
-      .map((r: any) => ({
+    // Define the GitHub API response type
+    interface GitHubRepo {
+      id: number;
+      name: string;
+      html_url: string;
+      description: string | null;
+      stargazers_count: number;
+      forks_count: number;
+      language: string | null;
+      topics: string[];
+      fork: boolean;
+    }
+
+    const simplified = (repos as GitHubRepo[])
+      .filter((r) => !r.fork)
+      .map((r) => ({
         id: r.id,
         name: r.name,
         html_url: r.html_url,
@@ -32,7 +45,8 @@ export async function GET() {
       }));
 
     return NextResponse.json(simplified, { status: 200 });
-  } catch (e: any) {
-    return NextResponse.json({ error: e.message || "Unknown error" }, { status: 500 });
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }

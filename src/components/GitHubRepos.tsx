@@ -26,8 +26,9 @@ export function GitHubRepos() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         setRepos(data);
-      } catch (e: any) {
-        setError(e.message || "Failed to load repositories");
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : "Failed to load repositories";
+        setError(errorMessage);
       } finally {
         setLoading(false);
       }
