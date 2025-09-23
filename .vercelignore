@@ -1,0 +1,6 @@
+backend/
+frontend/
+screenshots/
+*.md
+.git/
+.gitignore
