@@ -1,0 +1,202 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Github, Mail, Linkedin, Download, Palette, ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { GitHubRepos } from "@/components/GitHubRepos";
+import { MediaGallery } from "@/components/MediaGallery";
+import { SkillsSection } from "@/components/SkillsSection";
+import { ContactForm } from "@/components/ContactForm";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-black via-blue-900 to-slate-900">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="text-2xl font-bold text-white"
+            >
+Oreofe Daniel Oladepo (BlaccDante)
+            </motion.div>
+            <div className="flex space-x-6">
+              {['About', 'Skills', 'Projects', 'Contact'].map((item, i) => (
+                <motion.a
+                  key={item}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  {item}
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6">
+        <div className="container mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              Software Engineer
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500">
+                {" "}| Animator
+              </span>
+            </h1>
+            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+              Passionate software engineer with expertise in full-stack development, Web3 technologies, and creative animation. 
+              Building scalable applications and innovative digital experiences that merge engineering excellence with artistic vision.
+            </p>
+            <div className="flex justify-center space-x-4 mb-12">
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://github.com/blaccdante"
+                target="_blank"
+                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 text-white hover:bg-white/20 transition-all"
+              >
+                <Github size={20} />
+                <span>GitHub</span>
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="/assets/BlaccCv.pdf"
+                target="_blank"
+                className="flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full px-6 py-3 text-white hover:from-purple-700 hover:to-pink-700 transition-all"
+              >
+                <Download size={20} />
+                <span>Resume</span>
+              </motion.a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-6">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-8"></div>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-6">Software Engineer & Creative Technologist</h3>
+              <p className="text-white/80 text-lg leading-relaxed mb-6">
+                Currently working as a Software Engineer at Manny Business Consult since April 2020, where I direct IT operations 
+                and develop full-stack applications using React.js, Node.js, and Express.js. I specialize in designing 
+                RESTful/GraphQL APIs, database optimization, and ensuring high-performance, scalable solutions.
+              </p>
+              <p className="text-white/80 text-lg leading-relaxed mb-6">
+                With a Bachelor's degree in Computer Science from Babcock University, I combine strong engineering fundamentals 
+                with creative skills in animation and Web3 technologies. I've successfully built DeFi platforms, NFT marketplaces, 
+                and bridge aggregators while maintaining a passion for digital art and creative expression.
+              </p>
+              <div className="flex space-x-4">
+                <a href="mailto:dannysoawesome@gmail.com" className="text-purple-400 hover:text-purple-300 transition-colors" aria-label="Email">
+                  <Mail size={24} />
+                </a>
+                <a href="http://linkedin.com/in/oreofe-oladepo-623595233" target="_blank" className="text-purple-400 hover:text-purple-300 transition-colors" aria-label="LinkedIn">
+                  <Linkedin size={24} />
+                </a>
+                <a href="https://github.com/blaccdante" target="_blank" className="text-purple-400 hover:text-purple-300 transition-colors" aria-label="GitHub">
+                  <Github size={24} />
+                </a>
+                <a href="https://www.behance.net/50b26f29" target="_blank" className="text-purple-400 hover:text-purple-300 transition-colors" aria-label="Behance">
+                  <Palette size={24} />
+                </a>
+                <a href="https://linktr.ee/blaccinferno" target="_blank" className="text-purple-400 hover:text-purple-300 transition-colors" aria-label="Linktree">
+                  <ExternalLink size={24} />
+                </a>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <MediaGallery />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20 px-6 bg-black/20">
+        <SkillsSection />
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 px-6">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Projects</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-8"></div>
+            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+              Here are some of my recent projects showcasing my skills and creativity
+            </p>
+          </motion.div>
+          
+          <GitHubRepos />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 bg-black/20">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Get In Touch</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-8"></div>
+            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+              I'm always interested in new opportunities and interesting projects. Let's connect!
+            </p>
+          </motion.div>
+          
+          <ContactForm />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-6 border-t border-white/10">
+        <div className="container mx-auto text-center">
+          <p className="text-white/60">
+            © {new Date().getFullYear()} Oreofe Daniel Oladepo (BlaccDante). Built with Next.js and Tailwind CSS.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
