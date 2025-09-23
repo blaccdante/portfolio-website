@@ -5,7 +5,7 @@ export const personalInfo: PersonalInfo = {
   nickname: "BlaccDante (Blacc Inferno)",
   title: "Multidisciplinary Creative Developer | Animator | Web3 Artist",
   bio: "Self-taught 2D/3D artist, animator, and full-stack developer creating surreal digital art and innovative Web3 experiences. Inspiration drawn from cyberpunk aesthetics, music, anime, and the nuanced beauties of the world. Successfully sold NFTs and built creative technologies that bridge art and code.",
-  resume: "/assets/BlaccCv.pdf"
+  resume: "/assets/BlaccdanteCv.pdf"
 };
 
 export const contactInfo: ContactInfo = {

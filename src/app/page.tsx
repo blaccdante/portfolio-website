@@ -119,7 +119,7 @@ export default function Home() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="/assets/BlaccCv.pdf"
+                href="/assets/BlaccdanteCv.pdf"
                 target="_blank"
                 className="flex items-center justify-center space-x-2 bg-white text-black hover:bg-gray-100 rounded-full px-6 py-3 transition-all shadow-lg hover:shadow-white/25 min-h-[48px] touch-manipulation font-medium"
               >
