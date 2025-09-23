@@ -13,15 +13,15 @@ A modern, responsive portfolio website built with React, TypeScript, and Vite.
 
 ### Desktop Views
 
-![Portfolio Screenshot 1](frontend/public/screenshots/Screenshot%202025-09-23%20231834.png)
+![Portfolio Screenshot 1](screenshots/portfolio-screenshot-1.png)
 
-![Portfolio Screenshot 2](frontend/public/screenshots/Screenshot%202025-09-23%20231847.png)
+![Portfolio Screenshot 2](screenshots/portfolio-screenshot-2.png)
 
-![Portfolio Screenshot 3](frontend/public/screenshots/Screenshot%202025-09-23%20231859.png)
+![Portfolio Screenshot 3](screenshots/portfolio-screenshot-3.png)
 
-![Portfolio Screenshot 4](frontend/public/screenshots/Screenshot%202025-09-23%20231915.png)
+![Portfolio Screenshot 4](screenshots/portfolio-screenshot-4.png)
 
-![Portfolio Screenshot 5](frontend/public/screenshots/Screenshot%202025-09-23%20231933.png)
+![Portfolio Screenshot 5](screenshots/portfolio-screenshot-5.png)
 
 ## 🛠️ Built With
 
