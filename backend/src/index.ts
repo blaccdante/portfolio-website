@@ -2,16 +2,27 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import dotenv from 'dotenv';
 import contactRoutes from './routes/contact';
 
-// Load environment variables
-dotenv.config();
+// Import configuration and security middleware
+import config, { validateConfig, logConfig } from './config/env';
+import {
+  generalRateLimit,
+  contactRateLimit,
+  requestSizeLimit,
+  ipSecurityCheck,
+  additionalSecurityHeaders,
+  enhancedLogger,
+  securityErrorHandler
+} from './middleware/security';
+
+// Validate configuration on startup
+validateConfig();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = config.port;
 
-// Middleware
+// Security Middleware
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
@@ -19,18 +30,35 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
       imgSrc: ["'self'", "data:", "https:"],
+      connectSrc: ["'self'", config.frontendUrl],
     },
   },
+  crossOriginEmbedderPolicy: false, // Allow embedding for development
 }));
 
+// CORS Configuration
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-  credentials: true
+  origin: config.frontendUrl,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
+// Rate Limiting
+app.use(generalRateLimit);
+
+// Security Headers and Checks
+app.use(additionalSecurityHeaders);
+app.use(ipSecurityCheck);
+app.use(requestSizeLimit);
+
+// Logging
 app.use(morgan('combined'));
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ extended: true }));
+app.use(enhancedLogger);
+
+// Body Parsing
+app.use(express.json({ limit: config.requestBodyLimit }));
+app.use(express.urlencoded({ extended: true, limit: config.requestBodyLimit }));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
@@ -42,7 +70,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // API Routes
-app.use('/api/contact', contactRoutes);
+app.use('/api/contact', contactRateLimit, contactRoutes);
 
 // 404 handler
 app.use('*', (req, res) => {
@@ -52,19 +80,41 @@ app.use('*', (req, res) => {
   });
 });
 
+// Security Error Handler
+app.use(securityErrorHandler);
+
 // Global error handler
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error('Error:', err);
+  console.error('💥 Error:', err);
   
-  res.status(err.status || 500).json({
-    error: 'Internal Server Error',
-    message: process.env.NODE_ENV === 'development' ? err.message : 'Something went wrong'
-  });
+  // Enhanced error response
+  const errorResponse = {
+    error: err.status === 429 ? 'Rate limit exceeded' : 'Internal Server Error',
+    message: config.nodeEnv === 'development' ? err.message : 'Something went wrong',
+    status: err.status || 500,
+    timestamp: new Date().toISOString()
+  };
+  
+  res.status(err.status || 500).json(errorResponse);
 });
+
+// Graceful shutdown handling
+const gracefulShutdown = () => {
+  console.log('\n🔄 Received shutdown signal. Starting graceful shutdown...');
+  process.exit(0);
+};
+
+process.on('SIGTERM', gracefulShutdown);
+process.on('SIGINT', gracefulShutdown);
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Portfolio API server is running on port ${PORT}`);
-  console.log(`📝 Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`🌐 Frontend URL: ${process.env.FRONTEND_URL || 'http://localhost:5173'}`);
+  console.log('\n🚀 Portfolio API Server Started Successfully!');
+  console.log('='.repeat(50));
+  logConfig();
+  console.log('='.repeat(50));
+  console.log(`\n🌍 Server URL: http://localhost:${PORT}`);
+  console.log(`📊 Health Check: http://localhost:${PORT}/api/health`);
+  console.log(`📧 Contact API: http://localhost:${PORT}/api/contact`);
+  console.log('\n✅ Ready to accept connections!\n');
 });
