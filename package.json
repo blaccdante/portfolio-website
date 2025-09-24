@@ -6,7 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "type-check": "tsc --noEmit",
+    "dev:turbo": "next dev --turbo",
+    "build:analyze": "ANALYZE=true next build",
+    "clean": "rm -rf .next out node_modules/.cache",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "echo \"No tests specified\" && exit 0",
+    "precommit": "lint-staged",
+    "postinstall": "echo \"Portfolio setup complete! Run 'npm run dev' to start development.\""
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
