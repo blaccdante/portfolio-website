@@ -90,7 +90,7 @@ export const uniqueArray = <T>(arr: T[]): T[] => {
   return Array.from(new Set(arr));
 };
 
-export const groupBy = <T, K extends keyof any>(
+export const groupBy = <T, K extends string | number | symbol>(
   array: T[],
   key: (item: T) => K
 ): Record<K, T[]> => {
@@ -157,7 +157,7 @@ export const storage = {
 };
 
 // Debounce utility for performance optimization
-export const debounce = <T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void => {
